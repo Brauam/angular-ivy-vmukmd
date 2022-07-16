@@ -1,0 +1,16 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<form [formGroup]="formulario">
+  <div class="mb-12">
+    <label for="campoTexto" class="form-label"
+      >Campo de Texto</label>
+    <input
+      type="text"      
+      class="form-control"
+      formControlName="campoTexto"
+      id="campoTexto"
+      placeholder="campoTexto"
+    />
+  </div>
+</form>
