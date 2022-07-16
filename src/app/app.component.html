@@ -3,10 +3,9 @@
 
 <form [formGroup]="formulario">
   <div class="mb-12">
-    <label for="campoTexto" class="form-label"
-      >Campo de Texto</label>
+    <label for="campoTexto" class="form-label">Campo de Texto</label>
     <input
-      type="text"      
+      type="text"
       class="form-control"
       formControlName="campoTexto"
       id="campoTexto"
@@ -14,24 +13,40 @@
     />
   </div>
   <div class="mb-12">
-    <label for="campoTexto" class="form-label"
-      >Campo Numerico</label>
+    <label for="campoTexto" class="form-label">Campo Numerico</label>
     <input
-      type="number"      
+      type="number"
       class="form-control"
-      formControlName="campoTexto"
+      formControlName="campoNumerico"
       id="campoTexto"
       placeholder="0"
     />
   </div>
-  <select class="form-select" formControlName="datoSelector" aria-label="Default select example">
+
+  <label for="campoTexto" class="form-label">Selector</label>
+  <select
+    class="form-select"
+    formControlName="datoSelector"
+    aria-label="Default select example"
+  >
     <option selected>Open this select menu</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
-    <textarea class="form-control" formControlname="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Comentario</label
+    >
+    <textarea
+      class="form-control"
+      formControlName="comentario"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
   </div>
+  <button class="btn btn-primary" [disabled]="formulario.invalid">save</button>
 </form>
+
+{{ this.formulario.value | json }}
+{{ this.formulario.invalid }}
